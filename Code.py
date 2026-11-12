@@ -1,6 +1,6 @@
+from pathlib import Path
 
 import pandas as pd
-from pandas import read_csv
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -10,7 +10,8 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score, mean_absolute_error
 
 
-df = pd.read_csv(r"C:\Users\kaddo\PycharmProjects\Electricity relation with weather\weather-energy-data-update.csv")
+data_path = Path(__file__).resolve().with_name("weather-energy-data-update.csv")
+df = pd.read_csv(data_path)
 print(df.head())
 
 
